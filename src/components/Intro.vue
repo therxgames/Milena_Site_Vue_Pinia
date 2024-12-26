@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import MilenaImg from '@assets/images/milena.jpg'
 import Button from './ui/Button.vue'
 </script>
 
@@ -15,7 +14,7 @@ import Button from './ui/Button.vue'
     </div>
 
     <div>
-      <img :src="MilenaImg" />
+      <img src="/images/milena.jpg" />
     </div>
   </div>
 </template>

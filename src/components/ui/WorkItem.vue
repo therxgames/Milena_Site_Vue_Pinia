@@ -10,7 +10,7 @@ interface Props {}
     </div>
 
     <div class="absolute top-0 left-0 w-full h-full z-1 opacity-10">
-      <img src="/src/assets/images/art/marine-life.jpg" class="object-cover w-full h-full" />
+      <img src="/images/art/marine-life.jpg" class="object-cover w-full h-full" />
     </div>
   </div>
 </template>

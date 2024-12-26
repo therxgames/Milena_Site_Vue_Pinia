@@ -9,9 +9,9 @@ import Button from './ui/Button.vue'
     <div class="title_box relative flex flex-col justify-center gap-10">
       <h1 class="text-7xl font-bold">"Art That Speaks for You"</h1>
 
-      <Button>
-        <RouterLink to="/works">Go to my works</RouterLink>
-      </Button>
+      <RouterLink to="/works">
+        <Button>Go to my works</Button>
+      </RouterLink>
     </div>
 
     <div>

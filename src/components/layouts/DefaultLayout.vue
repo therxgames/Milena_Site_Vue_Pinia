@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import MainHeader from '../ui/layout/MainHeader.vue'
+import Header from '../ui/layout/Header.vue'
+import Footer from '../ui/layout/Footer.vue'
 </script>
 
 <template>
   <div class="container m-auto">
-    <MainHeader />
+    <Header />
 
     <main>
       <slot />
     </main>
+
+    <Footer />
   </div>
 </template>

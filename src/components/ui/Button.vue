@@ -11,7 +11,7 @@ defineProps<Props>()
 <template>
   <div class="relative group w-fit">
     <button
-      class="py-5 px-12 font-bold border-2 relative z-10 w-full h-full text-white bg-transparent border-red"
+      class="py-5 px-12 font-bold border-2 relative z-10 w-full h-full bg-transparent border-red"
     >
       <slot />
     </button>

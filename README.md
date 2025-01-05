@@ -1,61 +1,95 @@
-# .
+src/
+├── components/ # Все общие и локальные компоненты
+│ ├── base/ # Базовые (атомарные) компоненты
+│ │ ├── BaseButton.vue
+│ │ ├── BaseInput.vue
+│ │ ├── BaseModal.vue
+│ │ └── index.ts # Экспорт всех базовых компонентов
+│ ├── ui/ # UI-компоненты средней сложности
+│ │ ├── Dropdown.vue
+│ │ ├── Card.vue
+│ │ ├── Navbar.vue
+│ │ └── index.ts # Экспорт всех UI-компонентов
+│ ├── layouts/ # Макеты для страниц
+│ │ ├── DefaultLayout.vue
+│ │ ├── AuthLayout.vue
+│ │ └── index.ts # Экспорт всех макетов
+│ └── features/ # Функциональные компоненты (по фичам)
+│ ├── UserProfile/
+│ │ ├── UserCard.vue
+│ │ ├── UserAvatar.vue
+│ │ └── index.ts # Экспорт компонентов фичи
+│ └── index.ts # Экспорт всех фич
+├── pages/ # Страницы приложения
+│ ├── HomePage.vue
+│ ├── AboutPage.vue
+│ └── index.ts # Экспорт всех страниц
+├── router/ # Настройки маршрутизации
+│ ├── index.ts
+│ └── routes.ts
+├── store/ # Состояние приложения (Vuex/Pinia)
+│ ├── modules/ # Модули состояния
+│ │ ├── auth.ts
+│ │ ├── user.ts
+│ │ └── index.ts # Экспорт всех модулей
+│ └── index.ts # Главный файл состояния
+├── composables/ # Повторно используемые логики (composition API)
+│ ├── useAuth.ts
+│ ├── useFetch.ts
+│ └── useToggle.ts
+├── styles/ # Стили проекта
+│ ├── base.css # Базовые стили
+│ ├── main.css # Главные стили
+│ └── tailwind.css # Если используется TailwindCSS
+├── assets/ # Статические ресурсы (изображения, шрифты)
+│ ├── images/
+│ ├── icons/
+│ └── fonts/
+├── utils/ # Утилиты и вспомогательные функции
+│ ├── validators.ts
+│ ├── formatters.ts
+│ └── constants.ts
+├── types/ # Общие типы и интерфейсы TypeScript
+│ ├── components.d.ts
+│ ├── api.d.ts
+│ └── global.d.ts
+├── App.vue # Корневой компонент приложения
+├── main.ts # Точка входа в приложение
+└── env.d.ts # Типы для переменных окружения
 
-This template should help get you started developing with Vue 3 in Vite.
+Детализация ключевых директорий
 
-## Recommended IDE Setup
+1. components/
+   base/: Атомарные компоненты, такие как кнопки, инпуты, модальные окна, которые могут использоваться во всём приложении.
+   ui/: Более сложные компоненты (молекулы), которые состоят из базовых компонентов.
+   layouts/: Макеты страниц, например, общая структура с хедером, футером и основным контентом.
+   features/: Компоненты, связанные с конкретными фичами или модулями, например, профиль пользователя.
+2. pages/
+   Страницы приложения. Здесь могут быть рендеры компонентов и настройки данных для конкретной страницы.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+3. store/
+   Состояние приложения, например, Vuex или Pinia.
 
-## Type Support for `.vue` Imports in TS
+4. composables/
+   Повторно используемые логики, например, пользовательская авторизация, работы с API или управление состоянием.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+5. router/
+   Файлы маршрутизации, где хранятся маршруты и настройки навигации.
 
-## Customize configuration
+6. styles/
+   Стили приложения, включая глобальные стили, стили на основе TailwindCSS, SCSS или других библиотек.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+7. utils/
+   Утилиты, такие как функции валидации, форматирования данных или общие константы.
 
-## Project Setup
+8. types/
+   Типы и интерфейсы TypeScript для компонентов, API или глобальных переменных.
 
-```sh
-npm install
-```
+Типичный жизненный цикл компонента
+Базовый компонент: Например, BaseButton создаётся в папке components/base/.
 
-### Compile and Hot-Reload for Development
+UI-компонент: Более сложный компонент, например, Dropdown, использует BaseButton и инпуты.
 
-```sh
-npm run dev
-```
+Фича: Компонент для конкретной бизнес-логики (например, UserCard).
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Страница: Страница, которая объединяет несколько фичей и UI-компонентов.

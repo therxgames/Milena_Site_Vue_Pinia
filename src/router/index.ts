@@ -1,28 +1,12 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { HomeView, WorksView, WorkDetailView } from '@views'
+import { createRouter, createWebHistory } from 'vue-router'
 
-// Типизируем массив маршрутов
-const routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('../views/HomeView.vue'),
-  },
-  {
-    path: '/works',
-    name: 'Works',
-    component: () => import('../views/HomeView.vue'),
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/HomeView.vue'),
-  },
-  {
-    path: '/contact',
-    name: 'Contact me',
-    component: () => import('../views/HomeView.vue'),
-  },
+const routes = [
+  { path: '/', component: HomeView, name: 'Home' },
+  { path: '/works', component: WorksView, name: 'Works' },
+  { path: '/works/:id', component: WorkDetailView, meta: { hidden: true } },
+  // { path: '/about', component: WorkDetailView, name: 'About' },
+  // { path: '/contact', component: WorksView, name: 'Contact' },
 ]
 
 const router = createRouter({

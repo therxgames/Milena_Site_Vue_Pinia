@@ -1,11 +1,24 @@
 {
   "compilerOptions": {
+    "module": "es2020",
+    "target": "es2020",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"],
       "@assets/*": ["assets/*"],
       "@icons/*": ["assets/icons/*"],
-      "@components/*": ["components/*"]
+      "@layouts": ["components/layouts"],
+      "@shared": ["components/shared"],
+      "@ui": ["components/ui"],
+      "@views": ["views"],
+      "@utils": ["utils"],
+      "@types": ["types"],
+      "@stores": ["stores"],
+      "@router": ["router"],
+      "@components/*": ["components/*"],
+      "@/*": ["*"]
     }
   }
 }

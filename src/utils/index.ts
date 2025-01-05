@@ -1,2 +1,2 @@
-export { icons } from './icons'
-export { mockData } from './mockData'
+export * from './icons'
+export * from './getEnvVar'

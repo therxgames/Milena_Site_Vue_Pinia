@@ -13,7 +13,7 @@ export const useArtMaterialStore = defineStore('artMaterial', () => {
     error.value = null
 
     try {
-      const { data } = await axiosInstance.get('/api/art_materials', {
+      const { data } = await axiosInstance.get('/art_materials', {
         params: {
           ...params,
           select: '*',

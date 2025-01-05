@@ -13,7 +13,7 @@ export const useArtStyleStore = defineStore('artStyle', () => {
     error.value = null
 
     try {
-      const { data } = await axiosInstance.get('/api/art_styles', {
+      const { data } = await axiosInstance.get('/art_styles', {
         params: {
           ...params,
           select: '*',

@@ -25,7 +25,7 @@ export const useArtFiltersStore = defineStore('artFilters', () => {
     error.value = null
 
     try {
-      const { data } = await axiosInstance.get('/api/art_filters', {
+      const { data } = await axiosInstance.get('/art_filters', {
         params: {
           ...params,
           select: '*',

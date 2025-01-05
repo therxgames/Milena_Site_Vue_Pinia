@@ -13,7 +13,7 @@ export const useArtCategoryStore = defineStore('artCategory', () => {
     error.value = null
 
     try {
-      const { data } = await axiosInstance.get('/api/art_categories', {
+      const { data } = await axiosInstance.get('/art_categories', {
         params: {
           ...params,
           select: '*',

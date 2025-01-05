@@ -1,7 +1,7 @@
-import axios from 'axios'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { ArtMaterial } from '@types'
+import { axiosInstance } from '@utils'
 
 export const useArtMaterialStore = defineStore('artMaterial', () => {
   const materials = ref<ArtMaterial[]>([])
@@ -13,7 +13,7 @@ export const useArtMaterialStore = defineStore('artMaterial', () => {
     error.value = null
 
     try {
-      const { data } = await axios.get('/api/art_materials', {
+      const { data } = await axiosInstance.get('/api/art_materials', {
         params: {
           ...params,
           select: '*',

@@ -1,4 +1,3 @@
-import axios from 'axios'
 import {
   ArtFilters,
   ArtCategoryFilter,
@@ -8,6 +7,7 @@ import {
 } from '@types'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import { axiosInstance } from '@utils'
 
 export const useArtFiltersStore = defineStore('artFilters', () => {
   const filters = ref<ArtFilters>({
@@ -25,7 +25,7 @@ export const useArtFiltersStore = defineStore('artFilters', () => {
     error.value = null
 
     try {
-      const { data } = await axios.get('/api/art_filters', {
+      const { data } = await axiosInstance.get('/api/art_filters', {
         params: {
           ...params,
           select: '*',

@@ -14,9 +14,7 @@ export default defineConfig({
     vue(),
     //vueDevTools(),
   ],
-  server: {
-    baseURL: '/Milena_Site_Vue_Pinia',
-  },
+  base: '/Milena_Site_Vue_Pinia/',
   resolve: {
     alias: {
       '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),

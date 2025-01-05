@@ -1,7 +1,7 @@
-import axios from 'axios'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { Art } from '@types'
+import { axiosInstance } from '@utils'
 
 export const useArtStore = defineStore('art', () => {
   const fetchedArts = ref<Art[]>([])
@@ -15,7 +15,7 @@ export const useArtStore = defineStore('art', () => {
     error.value = null
 
     try {
-      const { data } = await axios.get('/api/arts', {
+      const { data } = await axiosInstance.get('/arts', {
         params: {
           ...params,
           select:
@@ -37,7 +37,7 @@ export const useArtStore = defineStore('art', () => {
     error.value = null
 
     try {
-      const { data } = await axios.get('/api/arts', {
+      const { data } = await axiosInstance.get('/arts', {
         params: {
           ...params,
           id: `eq.${id}`,

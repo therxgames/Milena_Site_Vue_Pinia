@@ -15,16 +15,7 @@ export default defineConfig({
     //vueDevTools(),
   ],
   server: {
-    proxy: {
-      '/api': {
-        target: process.env.VITE_API_URL,
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-        headers: {
-          apikey: process.env.VITE_SUPABASE_KEY,
-        },
-      },
-    },
+    baseURL: '/Milena_Site_Vue_Pinia',
   },
   resolve: {
     alias: {

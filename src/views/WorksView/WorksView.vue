@@ -31,7 +31,11 @@ onMounted(async() => {
       <FilterSection :filters="artFilters.filters" />
 
       <div class="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-8">
-        <CardPreview v-for="item in artStore.arts" :item="item" />
+        <CardPreview v-if="artStore.arts.length" v-for="item in artStore.arts" :item="item" />
+
+        <p v-else class="text-center text-4xl font-bold col-span-full text-gray-500">
+          There are no arts to display.
+        </p>
       </div>
     </div>
   </DefaultLayout>

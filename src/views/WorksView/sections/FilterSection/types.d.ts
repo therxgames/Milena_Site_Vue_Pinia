@@ -1,4 +1,8 @@
-interface FilterSectionProps {}
+import { ArtFilters } from "@types"
+
+interface FilterSectionProps {
+  filters: ArtFilters
+}
 
 interface FilterSectionEmits {}
 

@@ -7,7 +7,7 @@ import { Header } from './Header'
   <div class="container m-auto flex flex-col min-h-[100vh]">
     <Header />
 
-    <main class="grow">
+    <main class="grow relative">
       <slot />
     </main>
 

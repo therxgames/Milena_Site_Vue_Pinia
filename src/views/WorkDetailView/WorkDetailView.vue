@@ -2,15 +2,22 @@
 import { DefaultLayout } from '@layouts'
 import { CardDetail } from '@shared'
 import { useArtStore } from '@stores'
-import { onMounted, watch } from 'vue'
+import { Loader } from '@ui'
+import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const artStore = useArtStore()
 const routeId = route.params.id
 
-onMounted(() => {
-  artStore.getArtById(Number(routeId))
+const isLoading = ref(true)
+
+onMounted(async () => {
+  isLoading.value = true
+
+  await artStore.getArtById(Number(routeId))
+
+  isLoading.value = false
 })
 
 watch(
@@ -23,6 +30,8 @@ watch(
 
 <template>
   <DefaultLayout>
-    <CardDetail v-if="artStore.art" :item="artStore.art" />
+    <Loader v-if="isLoading" />
+
+    <CardDetail v-else-if="artStore.art" :item="artStore.art" />
   </DefaultLayout>
 </template>

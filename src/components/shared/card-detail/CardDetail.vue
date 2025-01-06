@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Works } from '@/views/HomeView/sections';
 import { CardDetailEmits, CardDetailProps } from './types'
 import { Button } from '@ui'
 
@@ -59,8 +60,8 @@ const emit = defineEmits<CardDetailEmits>()
       <div class="mt-5 flex">
         <div class="bg-gray-normal p-5 flex flex-col w-full gap-3">
           <p class=""><span class="font-bold">Rarity:</span> {{ item.art_rarities.name }}</p>
-          <p class=""><span class="font-bold">Ready to Hang:</span> {{ item.hanged }}</p>
-          <p class=""><span class="font-bold">Frame:</span> {{ item.framed }}</p>
+          <p class=""><span class="font-bold">Ready to Hang:</span> {{ item.hanged ? 'Yes' : 'No' }}</p>
+          <p class=""><span class="font-bold">Frame:</span> {{ item.framed ? 'Yes' : 'No' }}</p>
           <p class=""><span class="font-bold">Packaging:</span> {{ item.art_packaging.name }}</p>
         </div>
       </div>

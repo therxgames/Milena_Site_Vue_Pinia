@@ -10,7 +10,9 @@ const emit = defineEmits<WorksEmits>()
 const artStore = useArtStore()
 
 onMounted(() => {
-  artStore.getAllArts()
+  artStore.getAllArts({
+    limit: 5
+  })
 })
 </script>
 

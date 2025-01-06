@@ -2,18 +2,14 @@
 import { useArtFiltersStore, useArtStore } from '@stores'
 import { CategoryFilter, StyleFilter, MaterialFilter, MediumFilter } from '../FilterSection'
 import { FilterSectionEmits, FilterSectionProps } from './types'
-import { computed, onMounted, watch } from 'vue'
+import { computed, watch } from 'vue'
 import { useForm } from 'vee-validate'
 
 const props = defineProps<FilterSectionProps>()
 const emit = defineEmits<FilterSectionEmits>()
-
-const artFilters = useArtFiltersStore()
 const arts = useArtStore()
 
 const { values: filterValues } = useForm()
-
-const filters = computed(() => artFilters.filters)
 
 watch(
   () => filterValues,
@@ -24,10 +20,6 @@ watch(
     deep: true,
   },
 )
-
-onMounted(() => {
-  artFilters.getAllFilters()
-})
 </script>
 
 <template>

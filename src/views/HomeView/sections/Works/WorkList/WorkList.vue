@@ -28,7 +28,7 @@ const modules = [Pagination]
     </swiper-slide>
   </swiper>
 
-  <div class="js-WorksPagination text-center my-5"></div>
+    <div class="text-center js-WorksPagination my-5"></div>
 </template>
 
 <style scoped lang="scss">
@@ -39,10 +39,16 @@ const modules = [Pagination]
   width: 12px;
   height: 12px;
   opacity: 1;
+  transform: scale(1);
 }
 
 :deep(.swiper-pagination-bullet-active) {
   background: theme('colors.red');
   border: none;
 }
+
+// :deep(.swiper-pagination-bullets.swiper-pagination-bullets-dynamic) {
+//   justify-content: center;
+//   transform: translateX(0%);
+// }
 </style>

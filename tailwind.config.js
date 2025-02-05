@@ -14,6 +14,9 @@ export default {
       black: '#040404',
       white: '#FFF',
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [],
 }

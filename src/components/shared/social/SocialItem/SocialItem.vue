@@ -9,9 +9,9 @@ const emit = defineEmits<SocialItemEmits>()
 <template>
   <a :href="link" target="_blank">
     <div
-      class="flex items-center justify-center border-2 border-red rounded-full w-[50px] h-[50px]"
+      class="flex items-center justify-center border-2 border-red rounded-full w-6 h-6 xl:w-[50px] xl:h-[50px]"
     >
-      <SvgIcon :name="name" />
+      <SvgIcon :name="name" fill="white" class="w-2.5 xl:w-[25px]" />
     </div>
   </a>
 </template>

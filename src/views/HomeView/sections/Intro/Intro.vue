@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { Button } from '@ui'
+import { Button, Title } from '@ui'
 import { IntroEmits, IntroProps } from './types'
 
 const props = defineProps<IntroProps>()
@@ -8,29 +8,36 @@ const emit = defineEmits<IntroEmits>()
 </script>
 
 <template>
-  <div class="pt-[150px] grid grid-cols-2 gap-x-5">
-    <div class="title_box relative flex flex-col justify-center gap-10">
-      <h1 class="text-7xl font-bold">"Art That Speaks for You"</h1>
+  <div class="pt-5 xl:pt-[150px] grid xl:grid-cols-2 xl:gap-x-5">
+    <div class="title_box relative flex gap-3 xl:flex-col justify-center xl:gap-10">
+      <Title>"Art That Speaks for You"</Title>
 
-      <RouterLink to="/works">
-        <Button>Go to my works</Button>
-      </RouterLink>
+      <Button>
+        <RouterLink to="/works">Go to my works</RouterLink>
+      </Button>
     </div>
 
-    <div>
+    <div class="mt-5 xl:mt-0">
       <img src="/images/milena.jpg" />
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .title_box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 20%;
-  background: theme('colors.red');
+  display: none;
+}
+
+@screen xl {
+  .title_box::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 3px;
+    background-color: theme('colors.red');
+  }
 }
 </style>

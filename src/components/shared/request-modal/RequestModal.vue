@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import * as yup from 'yup'
+import emailjs from 'emailjs-com'
 import { Form, useForm } from 'vee-validate'
 import { Select, Button, Input, Textarea } from '@ui'
 import { RequestModalEmits, RequestModalProps } from './types'
@@ -22,8 +23,27 @@ const options = [
   { title: 'Other', value: 5 },
 ]
 
-function onSubmit(values) {
-  console.log(values)
+async function onSubmit(values) {
+  console.log('Form values:', values)
+
+  try {
+    // Используем EmailJS для отправки письма
+    const result = await emailjs.send(
+      'service_segat5k', // Замените на ваш Service ID
+      'template_loauydm', // Замените на ваш Template ID
+      {
+        to_email: 'rostislav.mihaylov.manage@gmail.com', // Замените на email получателя
+        full_name: values.full_name,
+        email: values.email,
+        subject: options.find(opt => opt.value === values.subject)?.title || 'No Subject',
+        message: values.message,
+      },
+      '4orRJHGAGpuqmKqpf' // Замените на ваш User ID
+    )
+    console.log('Email sent successfully:', result)
+  } catch (error) {
+    console.error('Failed to send email:', error)
+  }
 }
 </script>
 

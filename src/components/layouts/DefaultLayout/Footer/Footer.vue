@@ -29,12 +29,12 @@ const id = useId()
 </script>
 
 <template>
-  <footer class="footer relative py-[150px] mt-[100px] flex items-center">
+  <footer class="footer relative flex items-center py-[50px] xl:py-[150px] xl:mt-[100px] xs:mt-[100px]">
     <div class="absolute left-0">
       <Social :list="social" />
     </div>
 
-    <div class="text-5xl font-bold leading-[36px] absolute left-1/2 transform -translate-x-1/2">
+    <div class="xl:text-5xl font-bold xl:leading-[36px] absolute left-1/2 transform -translate-x-1/2">
       Let's talk?
     </div>
 
@@ -48,15 +48,17 @@ const id = useId()
   </footer>
 </template>
 
-<style scoped lang="scss">
-.footer::before {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -30px);
-  content: '';
-  width: 2px;
-  height: 60px;
-  background: theme('colors.red');
+<style scoped>
+@screen xl {
+  .footer::before  {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -30px);
+    content: '';
+    width: 2px;
+    height: 60px;
+    background: theme('colors.red');
+  }
 }
 </style>

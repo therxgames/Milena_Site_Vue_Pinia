@@ -9,7 +9,7 @@ const emit = defineEmits<NavigationItemEmits>()
 <template>
   <RouterLink
     :to="link"
-    class="font-bold leading-6 pb-0.5 cursor-pointer border-b-2 border-transparent hover:text-red hover:border-b-red"
+    class="text-sm border-b-[1px] xl:text-xl xl:leading-6 xl:border-b-2 font-bold pb-0.5 cursor-pointer border-transparent hover:text-red hover:border-b-red"
     active-class="text-red border-b-red"
   >
     {{ title }}

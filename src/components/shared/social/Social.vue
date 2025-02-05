@@ -7,7 +7,7 @@ const emit = defineEmits<SocialEmits>()
 </script>
 
 <template>
-  <div class="flex items-center justify-center gap-4">
+  <div class="flex items-center justify-center gap-2 xl:gap-4">
     <SocialItem v-for="item in list" :name="item.name" :link="item.link" />
   </div>
 </template>

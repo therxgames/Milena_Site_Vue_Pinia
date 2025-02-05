@@ -11,7 +11,7 @@ const navList = computed(() => router.getRoutes().filter((item) => !item.meta.hi
 </script>
 
 <template>
-  <div class="flex gap-x-10">
+  <div class="flex gap-x-2 xl:gap-x-10">
     <NavigationItem v-for="item in navList" :title="String(item.name)" :link="item.path" />
   </div>
 </template>

@@ -9,7 +9,7 @@ const emit = defineEmits<SelectEmits>()
 <template>
   <div class="relative group w-fit">
     <button
-      class="py-5 px-12 font-bold border-2 relative z-10 w-full h-full bg-transparent border-red"
+      class="whitespace-nowrap py-1 px-2 text-xs xl:py-5 xl:px-12 xl:text-xl xl:font-bold border-2 relative z-10 bg-transparent border-red"
       :type="type"
     >
       <slot />

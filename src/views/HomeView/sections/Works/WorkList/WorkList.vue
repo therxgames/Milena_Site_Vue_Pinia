@@ -33,7 +33,7 @@ const modules = [Pagination]
     </swiper-slide>
   </swiper>
 
-    <div class="text-center js-WorksPagination my-2 xl:my-5"></div>
+  <div class="text-center js-WorksPagination my-2 xl:my-5"></div>
 </template>
 
 <style scoped lang="scss">

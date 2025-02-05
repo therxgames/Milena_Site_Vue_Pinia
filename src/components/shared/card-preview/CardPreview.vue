@@ -15,21 +15,21 @@ const emit = defineEmits<CardPreviewEmits>()
       </RouterLink>
 
       <p
-        class="opacity-0 group-hover:opacity-100 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl font-bold text-center pointer-events-none"
+        class="opacity-0 group-hover:opacity-100 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 xl:text-3xl font-bold text-center pointer-events-none"
       >
         Go to art
       </p>
     </div>
 
-    <div class="flex flex-col gap-y-3">
-      <div class="flex items-center justify-between">
-        <p class="font-bold">{{ item.title }}</p>
+    <div class="flex flex-col gap-y-1 xl:gap-y-3">
+      <div class="flex flex-col xl:flex-row xl:items-center justify-between">
+        <p class="text-xs xl:text-xl font-bold">{{ item.title }}</p>
         <p class="text-xs">{{ item.art_categories.name }}, {{ item.size }}</p>
       </div>
 
       <div class="flex justify-between">
-        <p class="text-sm font-bold">{{ item.art_countries.name }}</p>
-        <p class="text-sm font-bold">{{ item.price }}$</p>
+        <p class="text-xs font-bold xl:text-sm">{{ item.art_countries.name }}</p>
+        <p class="text-xs font-bold xl:text-sm">{{ item.price }}$</p>
       </div>
     </div>
   </div>

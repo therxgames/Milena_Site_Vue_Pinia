@@ -13,7 +13,7 @@ const modalStore = useModalStore()
 <template>
   <Teleport to="body">
     <div
-      class="fixed flex items-center justify-center min-h-screen w-screen bg-gray-normal bg-opacity-70 z-50 top-0 left-0"
+      class="fixed flex items-center justify-center min-h-screen w-screen bg-gray-normal bg-opacity-70 z-50 top-0 left-0 px-4 xl:px-0"
       @click.self="modalStore.closeModal"
     >
       <div class="relative">

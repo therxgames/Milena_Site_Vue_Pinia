@@ -12,7 +12,7 @@ const activeModalId = computed(() => modalStore.activeModalId === props.id)
 </script>
 
 <template>
-  <Modal @close="modalStore.closeModal" v-if="activeModalId">
+  <Modal @close="modalStore.closeModal" v-if="activeModalId" class="px-5">
     <div class="bg-black p-5 xl:min-h-[500px] xl:w-[800px] xl:p-10">
       <p class="leading-none text-xs xl:text-xl font-bold uppercase text-red">Milena Dmitrieva's Expertise</p>
 

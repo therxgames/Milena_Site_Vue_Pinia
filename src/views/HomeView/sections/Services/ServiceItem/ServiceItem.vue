@@ -27,12 +27,12 @@ const activeModalId = computed(() => modalStore.activeModalId === props.id)
   </Modal>
 
   <div
-    class="relative p-3 xl:p-[30px] bg-gray-normal group cursor-pointer"
+    class="relative px-5 py-3 xl:p-[30px] bg-gray-normal group cursor-pointer"
     @click="modalStore.openModal(id)"
   >
     <div class="relative z-10 flex items-center justify-between gap-x-4">
-      <p class="text-xs xl:text-lg font-bold">{{ title }}</p>
-      <SvgIcon name="cursor-pointer" class="w-[15px] xl:w-[35px]" />
+      <p class="xl:text-lg font-bold">{{ title }}</p>
+      <SvgIcon name="cursor-pointer" class="w-[20px] xl:w-[35px]" />
     </div>
 
     <div

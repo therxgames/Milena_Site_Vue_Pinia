@@ -4,8 +4,8 @@ import { Breadcrumbs, Navigation } from '@shared'
 
 <template>
   <header>
-    <div class="flex justify-between items-center select-none my-2 xl:my-10">
-      <RouterLink to="/" class="text-sm xl:text-4xl xl:leading-[36px] font-bold cursor-pointer">
+    <div class="flex justify-between items-center select-none my-4 xl:my-10">
+      <RouterLink to="/" class="xl:text-4xl xl:leading-[36px] font-bold cursor-pointer">
         Milena.
       </RouterLink>
 

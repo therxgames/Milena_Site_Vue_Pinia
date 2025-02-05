@@ -41,8 +41,8 @@ const modules = [Pagination]
   --swiper-pagination-bullet-horizontal-gap: 7px;
   border: 1px solid #fff;
   background: transparent;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   opacity: 1;
   transform: scale(1);
   @screen xl {

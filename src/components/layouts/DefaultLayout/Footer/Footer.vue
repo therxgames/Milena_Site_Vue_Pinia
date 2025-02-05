@@ -34,7 +34,7 @@ const id = useId()
       <Social :list="social" />
     </div>
 
-    <div class="xl:text-5xl font-bold xl:leading-[36px] absolute left-1/2 transform -translate-x-1/2">
+    <div class="text-xl xl:text-5xl font-bold xl:leading-[36px] absolute left-1/2 transform -translate-x-1/2">
       Let's talk?
     </div>
 

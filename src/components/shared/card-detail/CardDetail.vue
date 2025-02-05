@@ -31,13 +31,13 @@ const emit = defineEmits<CardDetailEmits>()
       <div class="flex-1 mt-4 xl:mt-6 h-full">
         <div class="bg-gray-normal p-3 xl:p-6 h-full flex flex-col">
           <div class="flex flex-col gap-y-1.5 xl:gap-y-3">
-            <p class="text-xs xl:text-xl">
+            <p class="xl:text-xl">
               <span class="font-bold">Category:</span>
               {{ item.art_categories.name }}
             </p>
-            <p class="text-xs xl:text-xl"><span class="font-bold">Styles:</span> {{ item.art_styles.name }}</p>
-            <p class="text-xs xl:text-xl"><span class="font-bold">Mediums:</span> {{ item.art_mediums.name }}</p>
-            <p class="text-xs xl:text-xl"><span class="font-bold">Size:</span> {{ item.size }}</p>
+            <p class="xl:text-xl"><span class="font-bold">Styles:</span> {{ item.art_styles.name }}</p>
+            <p class="xl:text-xl"><span class="font-bold">Mediums:</span> {{ item.art_mediums.name }}</p>
+            <p class="xl:text-xl"><span class="font-bold">Size:</span> {{ item.size }}</p>
           </div>
 
           <!-- <div class="flex justify-between mt-auto">
@@ -51,7 +51,7 @@ const emit = defineEmits<CardDetailEmits>()
     <div class="mt-4 xl:mt-[100px]">
       <Title class="xl:pt-3">Description</Title>
 
-      <p class="text-xs leading-5 mt-4 xl:mt-5 xl:text-xl xl:font-bold">
+      <p class="leading-6 mt-4 xl:mt-5 xl:text-xl xl:font-bold">
         {{ item.description }}
       </p>
     </div>
@@ -61,10 +61,10 @@ const emit = defineEmits<CardDetailEmits>()
 
       <div class="xl:mt-4 mt-5 flex">
         <div class="bg-gray-normal p-3 xl:p-6 flex flex-col w-full gap-y-1.5 xl:gap-y-3">
-          <p class="text-xs xl:text-xl"><span class="font-bold">Rarity:</span> {{ item.art_rarities.name }}</p>
-          <p class="text-xs xl:text-xl"><span class="font-bold">Ready to Hang:</span> {{ item.hanged ? 'Yes' : 'No' }}</p>
-          <p class="text-xs xl:text-xl"><span class="font-bold">Frame:</span> {{ item.framed ? 'Yes' : 'No' }}</p>
-          <p class="text-xs xl:text-xl"><span class="font-bold">Packaging:</span> {{ item.art_packaging.name }}</p>
+          <p class="xl:text-xl"><span class="font-bold">Rarity:</span> {{ item.art_rarities.name }}</p>
+          <p class="xl:text-xl"><span class="font-bold">Ready to Hang:</span> {{ item.hanged ? 'Yes' : 'No' }}</p>
+          <p class="xl:text-xl"><span class="font-bold">Frame:</span> {{ item.framed ? 'Yes' : 'No' }}</p>
+          <p class="xl:text-xl"><span class="font-bold">Packaging:</span> {{ item.art_packaging.name }}</p>
         </div>
       </div>
     </div>

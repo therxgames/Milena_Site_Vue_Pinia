@@ -6,7 +6,7 @@ const emit = defineEmits<TitleEmits>()
 </script>
 
 <template>
-  <h1 class="text-xl text-left xl:text-7xl font-bold">
+  <h1 class="text-2xl text-left xl:text-7xl font-bold">
     <slot />
   </h1>
 </template>

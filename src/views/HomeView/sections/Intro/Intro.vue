@@ -9,8 +9,8 @@ const emit = defineEmits<IntroEmits>()
 
 <template>
   <div class="pt-5 xl:pt-[150px] grid xl:grid-cols-2 xl:gap-x-5">
-    <div class="title_box relative flex gap-3 xl:flex-col justify-center xl:gap-10">
-      <Title>"Art That Speaks for You"</Title>
+    <div class="title_box relative flex justify-between gap-3 xl:flex-col xl:justify-center xl:gap-10">
+      <Title>"Art That Speaks"</Title>
 
       <Button>
         <RouterLink to="/works">Go to my works</RouterLink>

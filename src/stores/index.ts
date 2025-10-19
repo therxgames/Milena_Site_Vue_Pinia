@@ -1,7 +1,0 @@
-export * from './modal'
-export * from './art'
-export * from './artCategory'
-export * from './artStyle'
-export * from './artMaterial'
-export * from './artMedium'
-export * from './artFilters'

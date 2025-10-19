@@ -1,0 +1,13 @@
+@use 'swiper/scss';
+@use 'swiper/scss/navigation';
+@use 'swiper/scss/pagination';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: theme('colors.black');
+  color: #FFF;
+}

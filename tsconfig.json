@@ -1,24 +1,17 @@
 {
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "module": "es2020",
+    "module": "esnext",
     "target": "es2020",
     "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@assets/*": ["assets/*"],
-      "@icons/*": ["assets/icons/*"],
-      "@layouts": ["components/layouts"],
-      "@shared": ["components/shared"],
+      "@views": ["components/views"],
       "@ui": ["components/ui"],
-      "@views": ["views"],
-      "@utils": ["utils"],
-      "@types": ["types"],
-      "@stores": ["stores"],
-      "@router": ["router"],
-      "@components/*": ["components/*"],
-      "@/*": ["*"]
+      "@config": ["config"],
+      "@app-types/*": ["types/*"]
     }
   }
 }

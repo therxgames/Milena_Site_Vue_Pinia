@@ -328,7 +328,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "apiBase": "http://217.26.27.197:8080"
+    "apiBase": "https://milena-dm.ru"
   },
   "ipx": {
     "baseURL": "/_ipx",

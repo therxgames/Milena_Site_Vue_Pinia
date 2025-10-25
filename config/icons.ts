@@ -1,5 +1,5 @@
 import CursorPointer from 'assets/icons/cursor.svg?raw'
-import Cross from 'assets/icons//cross.svg?raw'
+import Cross from 'assets/icons/cross.svg?raw'
 import Instagram from 'assets/icons/instagram.svg?raw'
 import Gmail from 'assets/icons/gmail.svg?raw'
 import Telegram from 'assets/icons/telegram.svg?raw'

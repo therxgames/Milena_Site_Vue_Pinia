@@ -1,14 +1,56 @@
 <script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router'
-import { BreadcrumbsEmits, BreadcrumbsProps } from './types'
-
-const props = defineProps<BreadcrumbsProps>()
-const emit = defineEmits<BreadcrumbsEmits>()
-
 const route = useRoute()
-const router = useRouter()
+
+const names: Record<string, string> = {
+  works: 'Works',
+}
+
+const dynamicNames: Record<string, string> = {
+  works: 'Detail',
+}
+
+const breadcrumbs = computed(() => {
+  const segments = route.path.split('/').filter(Boolean)
+  let path = ''
+
+  return [
+    { path: '/', name: 'Home' },
+    ...segments.map((segment, index) => {
+      path += '/' + segment
+
+      const parentSegment = segments[index - 1] || ''
+      const isDynamic = route.params && Object.values(route.params).includes(segment)
+
+      const name = isDynamic
+        ? dynamicNames[parentSegment] || 'Элемент'
+        : names[segment] || segment.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+
+      return { path, name }
+    })
+  ]
+})
 </script>
 
 <template>
-  <div>{{}}</div>
+  <nav v-if="breadcrumbs.length > 1">
+    <template v-for="(breadcrumb, index) in breadcrumbs" :key="index">
+      <NuxtLink
+        v-if="index < breadcrumbs.length - 1"
+        :to="breadcrumb.path"
+        class="text-sm xl:text-base cursor-pointer hover:text-red"
+      >
+        {{ breadcrumb.name }}
+      </NuxtLink>
+
+      <span
+        v-else
+        class="text-sm xl:text-base"
+      >
+        {{ breadcrumb.name }}
+      </span>
+
+      <span v-if="index < breadcrumbs.length - 1"> / </span>
+    </template>
+  </nav>
 </template>
+

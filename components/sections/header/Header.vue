@@ -12,7 +12,6 @@ const navList = [
   },
 ];
 
-const artsStore = useArtsStore()
 const router = useRouter()
 
 const onLoginHandler = () => {
@@ -34,7 +33,7 @@ const onRegisterHandler = () => {
       <div class="flex items-center xl:gap-x-6">
         <SharedNavigation :list="navList" />
 
-        <div class="flex xl:gap-x-5">
+        <!-- <div class="flex xl:gap-x-5">
           <UiButton size="md" @click="onLoginHandler">
             Login
           </UiButton>
@@ -42,8 +41,10 @@ const onRegisterHandler = () => {
           <UiButton size="md" @click="onRegisterHandler">
             Register
           </UiButton>
-        </div>
+        </div> -->
       </div>
     </div>
+
+    <SharedBreadcrumbs class="my-2 xl:my-8" />
   </header>
 </template>

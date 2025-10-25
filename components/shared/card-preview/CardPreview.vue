@@ -20,7 +20,7 @@ const emit = defineEmits<CardPreviewEmits>()
         </p>
       </div>
 
-      <div class="flex flex-col gap-y-1 xl:gap-y-3">
+      <div class="flex flex-col gap-y-1 xl:gap-y-3 mt-1">
         <div class="flex flex-col gap-y-1 xl:flex-row xl:items-baseline xl:flex-wrap justify-between xl:gap-2">
           <p class="text-xs xl:text-xl font-bold">{{ item.title }}</p>
           <!-- <p class="text-xs">{{ item.art_categories.name }}, {{ item.size }}</p> -->
@@ -28,7 +28,7 @@ const emit = defineEmits<CardPreviewEmits>()
 
         <div class="flex justify-between items-baseline">
           <!-- <p class="text-xs font-bold xl:text-sm">{{ item.art_countries.name }}</p> -->
-          <p class="text-xs font-bold xl:text-sm">{{ item.price }}$</p>
+          <!-- <p class="text-xs font-bold xl:text-sm">{{ item.price }}$</p> -->
         </div>
       </div>
     </div>

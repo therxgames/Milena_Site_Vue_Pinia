@@ -4,6 +4,9 @@ import type { FooterEmits, FooterProps } from './types';
 const props = defineProps<FooterProps>()
 const emit = defineEmits<FooterEmits>()
 
+const modalId = useId()
+const modalStore = useModalStore()
+
 const social = computed(() => [
   {
     name: 'gmail',
@@ -21,22 +24,28 @@ const social = computed(() => [
 </script>
 
 <template>
-  <footer class="footer relative flex items-center py-[50px] xl:py-[150px] xl:mt-[100px] xs:mt-[100px]">
-    <div class="absolute left-0">
+  <footer class="footer relative grid grid-cols-[1fr_3fr_1fr] gap-1 xl:gap-5 items-center py-[50px] xl:py-[150px] xl:mt-[100px] xs:mt-[100px]">
+    <div class="flex items-center justify-start gap-1 xl:gap-4">
       <SharedSocial :list="social" />
     </div>
 
-    <div class="text-xl xl:text-5xl font-bold xl:leading-[36px] absolute left-1/2 transform -translate-x-1/2">
-      Let's talk?
+    <div class="text-center grid gap-6">
+      <p class=" text-xl xl:text-5xl font-bold xl:leading-[36px]">
+        Let's talk?
+      </p>
+
+      <!-- <p class="text-xs">
+        TIN: 345918084462
+      </p> -->
     </div>
 
-    <!-- <div class="absolute right-0">
-      <Button @click="modalStore.openModal(id)">Make request</Button>
+    <div class="absolute right-0">
+      <UiButton @click="modalStore.openModal(modalId)">Make request</UiButton>
 
-      <Modal @close="modalStore.closeModal" v-if="modalStore.activeModalId === id">
-        <RequestModal />
-      </Modal>
-    </div> -->
+      <UiModal @close="modalStore.closeModal" v-if="modalStore.activeId === modalId">
+        <SharedRequestModal />
+      </UiModal>
+    </div>
   </footer>
 </template>
 

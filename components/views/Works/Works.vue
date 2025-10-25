@@ -90,7 +90,7 @@ watch(activePage, () => {
         </div>
 
         <UiPagination
-          v-if="arts?.results"
+          v-if="arts?.results && pagesCount > 1"
           class="text-center mt-8 xl:mt-[80px]"
           :pages-count="pagesCount"
           v-model:activePage="activePage"
